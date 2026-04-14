@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtex Finishing Systems, Inc. | Commercial Painting Contractor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!--
+  ============================================================
+  BRAND AUDIT — Virtex Finishing Systems, Inc.
+  ============================================================
+
+  Aesthetic intent: "Serious commercial operator"
+
+  Brand colors (from logo):
+  - Navy blue: #1b2a4a (dominant)
+  - Burnt orange: #d4602a (accent)
+  - White (diamond, text)
+
+  Evidence: They paint UVA stadiums, historic buildings, upscale
+  interiors. Their portfolio includes Scott Stadium, Davenport
+  Baseball Stadium, Manning Pavilion, and high-end commercial
+  interiors. This is institutional-grade work.
+
+  Design brief:
+  Your site tells me you're going for "serious commercial operator."
+  UVA stadiums, historic lobbies, high-end interiors. You do
+  institutional-grade work, but your website is on a free Wix
+  subdomain with a random username in the URL. The mockup I built
+  uses your actual project photos and brand colors to present the
+  company the way your work deserves.
+  ============================================================
+-->
+<style>
+  :root {
+    --primary: #1b2a4a;
+    --primary-light: #243556;
+    --accent: #d4602a;
+    --accent-hover: #bf5422;
+    --bg: #f8f8f6;
+    --bg-alt: #eef0ed;
+    --text: #1a1e2a;
+    --text-light: #5a5e6a;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--primary);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    height: 52px;
+    width: auto;
+  }
+
+  .nav-text {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+  }
+
+  .nav-text span {
+    display: block;
+    font-size: 0.6rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent) !important;
+    color: var(--white) !important;
+    padding: 10px 20px !important;
+    border-radius: 4px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-hover) !important; }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    margin-top: 72px;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('project-6.jpg') center/cover no-repeat;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(27,42,74,0.92) 0%, rgba(27,42,74,0.7) 50%, rgba(27,42,74,0.4) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    padding: 0 48px 0 80px;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    padding: 6px 14px;
+    border: 1px solid rgba(212,96,42,0.4);
+    border-radius: 3px;
+  }
+
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    color: var(--white);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 32px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.35);
+  }
+  .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--primary);
+    padding: 48px 24px;
+    border-top: 3px solid var(--accent);
+  }
+
+  .stats-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 96px 24px;
+    background: var(--bg);
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 64px;
+  }
+
+  .section-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    text-transform: uppercase;
+    color: var(--primary);
+    line-height: 1.2;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 6px;
+    padding: 36px 28px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .service-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .service-card p {
+    font-size: 0.92rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* PROJECTS */
+  .projects {
+    padding: 96px 24px;
+    background: var(--primary);
+  }
+
+  .projects .section-label { color: var(--accent); }
+  .projects .section-header h2 { color: var(--white); }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 20px;
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+  }
+
+  .project-card:hover img { transform: scale(1.04); }
+
+  .project-card.featured { grid-row: 1 / 3; }
+
+  .project-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px;
+    background: linear-gradient(transparent, rgba(27,42,74,0.9));
+  }
+
+  .project-overlay h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .project-overlay p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 96px 24px;
+    background: var(--bg-alt);
+  }
+
+  .about-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-image {
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  .about-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-content .section-label { text-align: left; }
+
+  .about-content h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    text-transform: uppercase;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .credentials {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--white);
+    padding: 12px 18px;
+    border-radius: 6px;
+    border: 1px solid rgba(27,42,74,0.1);
+  }
+
+  .credential-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .credential-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--white);
+  }
+
+  .credential-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* CLIENTS */
+  .clients {
+    padding: 64px 24px;
+    background: var(--bg);
+    text-align: center;
+  }
+
+  .clients .section-label { margin-bottom: 32px; }
+
+  .client-logos {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .client-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 96px 24px;
+    background: var(--primary);
+    color: var(--white);
+  }
+
+  .contact-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .contact .section-label { text-align: left; color: var(--accent); }
+
+  .contact h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .contact > div > p {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .contact-info-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .contact-info-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--primary-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-info-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
+  }
+
+  .contact-info-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 4px;
+  }
+
+  .contact-info-value {
+    font-size: 1rem;
+    color: var(--white);
+  }
+
+  .contact-info-value a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-form {
+    background: var(--primary-light);
+    border-radius: 8px;
+    padding: 40px;
+  }
+
+  .contact-form h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .form-group { margin-bottom: 16px; }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 6px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus { border-color: var(--accent); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .form-group select option { background: var(--primary); color: var(--white); }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover { background: var(--accent-hover); }
+
+  /* FOOTER */
+  footer {
+    background: #111827;
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* MOBILE */
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; height: 64px; }
+    .nav-links { display: none; }
+    .nav-text { font-size: 1rem; }
+    .hero { height: 75vh; min-height: 480px; margin-top: 64px; }
+    .hero-content { padding: 0 24px; }
+    .hero-badge { font-size: 0.7rem; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .project-card.featured { grid-row: auto; }
+    .project-card { min-height: 220px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-image img { height: 280px; }
+    .client-logos { gap: 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .form-row { grid-template-columns: 1fr; }
+    .credentials { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <img src="logo.jpg" alt="Virtex Finishing Systems logo" class="nav-logo">
+    <div class="nav-text">
+      Virtex Finishing Systems
+      <span>Commercial Painting Contractor</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Request Estimate</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Virginia Class A Licensed Contractor</div>
+    <h1>Institutional-Grade Finishing. Every Project.</h1>
+    <p>Commercial painting, specialty coatings, and wallcovering for general contractors and property owners across Central Virginia. Trusted since 1990.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Request an Estimate</a>
+      <a href="tel:4349781671" class="btn btn-outline">Call (434) 978-1671</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-number">35+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div>
+      <div class="stat-number">Class A</div>
+      <div class="stat-label">VA Licensed</div>
+    </div>
+    <div>
+      <div class="stat-number">Top 24%</div>
+      <div class="stat-label">VA Contractors</div>
+    </div>
+    <div>
+      <div class="stat-number">Lead Safe</div>
+      <div class="stat-label">EPA Certified</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">What We Do</div>
+      <h2>Full-Service Commercial Finishing</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Commercial Painting</h3>
+        <p>Interior and exterior painting for commercial properties. New construction, tenant improvements, and scheduled maintenance programs for property managers.</p>
+      </div>
+      <div class="service-card">
+        <h3>High Performance Coatings</h3>
+        <p>Specialty coatings for industrial and commercial environments. Epoxy floors, anti-corrosion systems, and protective finishes built for heavy use.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom Stain &amp; Finishing</h3>
+        <p>Precision color matching and custom stain work for architectural woodwork, cabinetry, and millwork. Sample matching and on-site finishing.</p>
+      </div>
+      <div class="service-card">
+        <h3>Vinyl Wallcovering</h3>
+        <p>Commercial-grade wallcovering installation for offices, hospitality, healthcare, and retail. Proper surface prep and seam-matched installation.</p>
+      </div>
+      <div class="service-card">
+        <h3>Custom Wallpaper &amp; Murals</h3>
+        <p>Digital image installation, custom murals, and specialty wallpapers. From branded office environments to large-format graphics.</p>
+      </div>
+      <div class="service-card">
+        <h3>Residential Painting</h3>
+        <p>The same precision and professionalism we bring to commercial jobs, applied to your home. Interior, exterior, and specialty finishes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Our Work</div>
+      <h2>Projects Across Central Virginia</h2>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured">
+        <img src="project-5.jpg" alt="Historic building lobby with herringbone floors and columns">
+        <div class="project-overlay">
+          <h3>Historic Building Restoration</h3>
+          <p>Interior finishing and specialty coatings</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="image-2.jpg" alt="UVA Davenport Baseball Stadium">
+        <div class="project-overlay">
+          <h3>UVA Davenport Stadium</h3>
+          <p>Exterior commercial painting</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="project-1.jpg" alt="Upscale hospitality interior with custom wallcovering">
+        <div class="project-overlay">
+          <h3>Hospitality Interior</h3>
+          <p>Wallcovering and custom finishing</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px;">
+      <div class="project-card" style="min-height:220px;">
+        <img src="project-6.jpg" alt="UVA Baseball Stadium seating">
+        <div class="project-overlay">
+          <h3>UVA Stadium Seating</h3>
+          <p>Commercial painting and coatings</p>
+        </div>
+      </div>
+      <div class="project-card" style="min-height:220px;">
+        <img src="project-7.jpg" alt="Scott Stadium at UVA">
+        <div class="project-overlay">
+          <h3>UVA Scott Stadium</h3>
+          <p>Exterior painting and coatings</p>
+        </div>
+      </div>
+      <div class="project-card" style="min-height:220px;">
+        <img src="project-9.jpg" alt="Manning Pavilion at UVA">
+        <div class="project-overlay">
+          <h3>UVA Manning Pavilion</h3>
+          <p>Exterior painting and restoration</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="project-2.jpg" alt="Institutional stairwell with precision paint work">
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Virtex</div>
+      <h2>35 Years of Delivering on the Most Demanding Schedules</h2>
+      <p>Since 1990, Virtex Finishing Systems has been the painting and finishing contractor that general contractors in Central Virginia trust with their most important projects. We built our reputation on two things: exceptional quality and hitting every deadline.</p>
+      <p>As a full-service, Virginia Class A licensed contractor, we handle everything from large-scale stadium repaints to precision custom finishing in historic buildings. Our team brings the organization, safety standards, and professionalism that commercial projects demand.</p>
+      <div class="credentials">
+        <div class="credential">
+          <div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          <span class="credential-text">Virginia Class A Licensed</span>
+        </div>
+        <div class="credential">
+          <div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          <span class="credential-text">Lead Safe Certified</span>
+        </div>
+        <div class="credential">
+          <div class="credential-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+          <span class="credential-text">Fully Insured</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="section-label">Trusted By</div>
+  <div class="client-logos">
+    <span class="client-name">University of Virginia</span>
+    <span class="client-name">UVA Athletics</span>
+    <span class="client-name">Ace Cash Express</span>
+    <span class="client-name">Central VA General Contractors</span>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label">Get in Touch</div>
+      <h2>Ready to Talk About Your Next Project?</h2>
+      <p>Whether you're a general contractor planning a build or a property owner looking to refresh your space, we'd like to hear about your project.</p>
+
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"/></svg></div>
+        <div>
+          <div class="contact-info-label">Phone</div>
+          <div class="contact-info-value"><a href="tel:4349781671">(434) 978-1671</a></div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+        <div>
+          <div class="contact-info-label">Email</div>
+          <div class="contact-info-value"><a href="mailto:drm@virtexinc.com">drm@virtexinc.com</a></div>
+        </div>
+      </div>
+
+      <div class="contact-info-item">
+        <div class="contact-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg></div>
+        <div>
+          <div class="contact-info-label">Office</div>
+          <div class="contact-info-value">977 Seminole Trail, Suite 350<br>Charlottesville, VA 22901</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Request an Estimate</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" placeholder="Company name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" placeholder="(434) 555-0000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="project-type">Project Type</label>
+        <select id="project-type">
+          <option value="">Select a service</option>
+          <option value="commercial-painting">Commercial Painting</option>
+          <option value="high-performance">High Performance Coatings</option>
+          <option value="wallcovering">Wallcovering Installation</option>
+          <option value="custom-finishing">Custom Stain &amp; Finishing</option>
+          <option value="residential">Residential Painting</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">Project Details</label>
+        <textarea id="message" placeholder="Tell us about your project, timeline, and any specific requirements."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Submit Request</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 Virtex Finishing Systems, Inc. | Virginia Class A Licensed Contractor | Charlottesville, VA</p>
+</footer>
+
+</body>
+</html>
