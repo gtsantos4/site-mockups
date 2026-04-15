@@ -1,0 +1,897 @@
+<!--
+  BRAND AUDIT: Minda's Boutique
+  Aesthetic intent: "Curated artisan elegance"
+
+  Evidence:
+  - 45+ years (since 1980) hand-selecting art-to-wear clothing, jewelry, and accessories
+  - Owner Minda Gordon personally travels to Thailand to source from artisans
+  - Products: Van Gogh/Klimt kimonos, butterfly wing earrings, Anokhi block prints, tie-dye pieces
+  - Jewel tone palette: deep teals, golds, corals, purples across products
+  - Serif-first typography on current site signals sophistication
+  - "Say it with style!" - personal, confident, expressive voice
+  - Minda Cares community giving program
+
+  Where the platform fails them:
+  45 years of global curation reduced to mindasboutique.wixsite.com/mindanew. The product photography
+  is actually good but the Wix template gives no hierarchy or storytelling. Butterfly wing earrings and
+  tie-dye dresses sit in the same generic grid with no visual distinction.
+
+  Target market: Women 45-70+, Charlottesville locals, value natural fibers and uniqueness over brand names.
+
+  DESIGN DECISIONS:
+  - Layout: Airy/product-forward. Clean warm backgrounds let colorful products pop.
+  - Typography: Refined Simplicity (Cormorant Garamond + Lato)
+  - Colors: --primary: #163E3A (deep teal), --accent: #C4933A (warm gold), --bg: #FAF8F5 (linen cream)
+  - Section order: Hero > Collections > About Minda > Featured Pieces > Visit
+  - Hero: Full-bleed hero-1 (vibrant tunics triptych)
+  - CTA: Inviting/warm. "Visit the Boutique"
+  - Nav: Home, Collections, About Minda, Minda Cares, Visit Us
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minda's Boutique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #163E3A;
+    --primary-light: #1e524d;
+    --accent: #C4933A;
+    --accent-hover: #b0832e;
+    --bg: #FAF8F5;
+    --bg-alt: #F0EDE8;
+    --text: #2F2E2E;
+    --text-light: #7A7877;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(22, 62, 58, 0.08);
+    transition: background 0.3s;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--primary);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--primary);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    min-height: 560px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-top: 72px;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(22, 62, 58, 0.88) 0%,
+      rgba(22, 62, 58, 0.70) 35%,
+      rgba(22, 62, 58, 0.15) 65%,
+      rgba(22, 62, 58, 0.0) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    padding: 0 64px;
+    color: var(--white);
+  }
+
+  .hero-tagline {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--white);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 32px;
+    max-width: 440px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    margin-left: 16px;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 96px 48px; }
+
+  .section-label {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-weight: 300;
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto 56px;
+    line-height: 1.7;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── COLLECTIONS ── */
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .collection-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 3/4;
+  }
+
+  .collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .collection-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .collection-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(22, 62, 58, 0.92) 0%,
+      rgba(22, 62, 58, 0.6) 40%,
+      rgba(22, 62, 58, 0.15) 70%,
+      transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+  }
+
+  .collection-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .collection-card p {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 300;
+  }
+
+  /* ── ABOUT ── */
+  .about { background: var(--bg-alt); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-image-wrap {
+    position: relative;
+  }
+
+  .about-image-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    color: var(--primary);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .about-text .about-label {
+    font-weight: 300;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .about-text p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .about-text p strong {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .about-stat-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(22, 62, 58, 0.12);
+  }
+
+  .about-stat {
+    text-align: left;
+  }
+
+  .about-stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--primary);
+    line-height: 1;
+  }
+
+  .about-stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+
+  /* ── FEATURED PIECES ── */
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .featured-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    transition: box-shadow 0.3s;
+  }
+
+  .featured-item:hover {
+    box-shadow: 0 8px 32px rgba(22, 62, 58, 0.1);
+  }
+
+  .featured-item img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+  }
+
+  .featured-item:hover img {
+    transform: scale(1.04);
+  }
+
+  .featured-item-info {
+    padding: 20px 24px;
+  }
+
+  .featured-item-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+
+  .featured-item-info p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  /* ── SOURCING BANNER ── */
+  .sourcing {
+    background: var(--primary);
+    padding: 80px 48px;
+  }
+
+  .sourcing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .sourcing-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .sourcing-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .sourcing-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .sourcing-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── VISIT / CONTACT ── */
+  .visit { background: var(--bg-alt); }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .visit-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 3vw, 2.2rem);
+    color: var(--primary);
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .visit-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .visit-detail svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--accent);
+  }
+
+  .visit-detail-content h4 {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+
+  .visit-detail-content p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  .visit-detail-content a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .visit-detail-content a:hover {
+    color: var(--accent);
+  }
+
+  .visit-cta {
+    background: var(--white);
+    padding: 48px;
+    text-align: center;
+  }
+
+  .visit-cta h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .visit-cta p {
+    color: var(--text-light);
+    font-weight: 300;
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .visit-cta .btn-primary {
+    color: var(--white);
+  }
+
+  /* ── MINDA CARES ── */
+  .minda-cares {
+    background: var(--white);
+    text-align: center;
+    padding: 72px 48px;
+    border-top: 1px solid rgba(22, 62, 58, 0.08);
+    border-bottom: 1px solid rgba(22, 62, 58, 0.08);
+  }
+
+  .minda-cares .section-title {
+    margin-bottom: 12px;
+  }
+
+  .minda-cares p {
+    color: var(--text-light);
+    font-weight: 300;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 48px;
+    text-align: center;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .footer-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 20px auto;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    .collections-grid { grid-template-columns: repeat(2, 1fr); }
+    .featured-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+
+    section { padding: 64px 24px; }
+
+    .hero { height: 65vh; min-height: 400px; }
+    .hero-content { padding: 0 32px; }
+    .hero-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(22, 62, 58, 0.95) 0%,
+        rgba(22, 62, 58, 0.7) 50%,
+        rgba(22, 62, 58, 0.25) 100%
+      );
+    }
+    .hero-content {
+      position: absolute;
+      bottom: 64px;
+      max-width: 100%;
+    }
+    .hero .btn-outline { display: none; }
+
+    .collections-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-stat-row { gap: 32px; }
+
+    .featured-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+    .sourcing-grid { grid-template-columns: 1fr; gap: 40px; }
+    .sourcing-images { grid-template-columns: 1fr 1fr; }
+
+    .visit-grid { grid-template-columns: 1fr; gap: 40px; }
+    .visit-cta { padding: 32px 24px; }
+  }
+
+  @media (max-width: 480px) {
+    .collections-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .hero h1 { font-size: 2.2rem; }
+    .about-stat-row { flex-direction: column; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">Minda's Boutique</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#about">About Minda</a></li>
+    <li><a href="#minda-cares">Minda Cares</a></li>
+    <li><a href="#visit">Visit Us</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="hero-1.jpg" alt="Three vibrant art-to-wear tunics on display at Minda's Boutique">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-tagline">Charlottesville's Art to Wear Boutique</p>
+    <h1>Natural Fibers. Handcrafted Beauty. Curated for You.</h1>
+    <p class="hero-desc">For over 45 years, Minda's Boutique has brought the world's most beautiful natural fiber clothing, handcrafted jewelry, and unique accessories to Charlottesville.</p>
+    <div>
+      <a href="#visit" class="btn btn-primary">Visit the Boutique</a>
+      <a href="#collections" class="btn btn-outline">Explore Collections</a>
+    </div>
+  </div>
+</section>
+
+<!-- COLLECTIONS -->
+<section id="collections">
+  <div class="container">
+    <p class="section-label">Shop by Collection</p>
+    <h2 class="section-title">Hand-Selected from Around the World</h2>
+    <p class="section-subtitle">Every piece in the boutique is chosen for its beauty, craftsmanship, and natural fibers. No two visits are the same.</p>
+    <div class="collections-grid">
+      <div class="collection-card">
+        <img src="tie-dye-1.jpg" alt="Tie-dye tunic with vibrant sunset pattern">
+        <div class="collection-card-overlay">
+          <h3>Art to Wear</h3>
+          <p>Tunics, dresses, and layering pieces</p>
+        </div>
+      </div>
+      <div class="collection-card">
+        <img src="product-extra-5.jpg" alt="Van Gogh Almond Blossom print silk kimono">
+        <div class="collection-card-overlay">
+          <h3>Kimonos &amp; Wraps</h3>
+          <p>Silk robes and cocoon wraps</p>
+        </div>
+      </div>
+      <div class="collection-card">
+        <img src="product-earring-butterfly-1.jpg" alt="Handcrafted purple butterfly wing earrings">
+        <div class="collection-card-overlay">
+          <h3>Handcrafted Jewelry</h3>
+          <p>Butterfly wings, fused glass, and more</p>
+        </div>
+      </div>
+      <div class="collection-card">
+        <img src="product-anokhi-blue-flame.jpg" alt="Blue flame tree Anokhi block-printed scarf">
+        <div class="collection-card-overlay">
+          <h3>Scarves &amp; Accessories</h3>
+          <p>Block prints, tapestry bags, belts</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap">
+        <img src="hero-2.jpg" alt="Minda Gordon modeling three looks from the boutique">
+      </div>
+      <div class="about-text">
+        <p class="about-label">About the Boutique</p>
+        <h2>Meet Minda</h2>
+        <p>Minda Gordon opened her boutique on Ivy Road in 1980 with a simple idea: women deserve clothing that's as unique as they are. No mass production. No fast fashion. Every piece hand-selected for its beauty, comfort, and craftsmanship.</p>
+        <p>Today, Minda still travels the world to find what you won't find anywhere else. From hand-blocked Anokhi prints to artisan-made butterfly wing earrings, every item in the shop has a story. Come in and she'll tell you about it.</p>
+        <p><strong>Free consultations.</strong> No-pressure service. Walk in wearing your favorites and walk out with something that makes them even better.</p>
+        <div class="about-stat-row">
+          <div class="about-stat">
+            <div class="about-stat-number">45+</div>
+            <div class="about-stat-label">Years in Business</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">100%</div>
+            <div class="about-stat-label">Natural Fibers</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-number">1980</div>
+            <div class="about-stat-label">Est. Charlottesville</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PIECES -->
+<section>
+  <div class="container">
+    <p class="section-label">In the Shop Now</p>
+    <h2 class="section-title">Featured Pieces</h2>
+    <p class="section-subtitle">A sample of what's waiting for you. Inventory changes with every sourcing trip.</p>
+    <div class="featured-grid">
+      <div class="featured-item">
+        <img src="product-kimono-peacock-teal.jpg" alt="Teal peacock silk kimono robe">
+        <div class="featured-item-info">
+          <h3>Peacock Silk Kimono</h3>
+          <p>Hand-sewn silk with peacock and floral print</p>
+        </div>
+      </div>
+      <div class="featured-item">
+        <img src="product-extra-1.jpg" alt="Teal fused glass earrings">
+        <div class="featured-item-info">
+          <h3>Fused Glass Earrings</h3>
+          <p>Handcrafted dichroic glass with sterling silver</p>
+        </div>
+      </div>
+      <div class="featured-item">
+        <img src="product-bag-coral-purse.jpg" alt="Coral embroidered clutch purse">
+        <div class="featured-item-info">
+          <h3>Embroidered Clutch</h3>
+          <p>Hand-embroidered with coral and gold thread</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOURCING -->
+<section class="sourcing">
+  <div class="container">
+    <div class="sourcing-grid">
+      <div class="sourcing-text">
+        <h2>Sourced Directly from Artisans</h2>
+        <p>Minda travels to Thailand, India, and beyond to find pieces you won't see anywhere else in Charlottesville. She works directly with artisans, supporting traditional craftsmanship and bringing back clothing and accessories made with care.</p>
+        <p>Every sourcing trip means new arrivals in the shop. Follow along or sign up for email updates to know when new pieces land.</p>
+      </div>
+      <div class="sourcing-images">
+        <img src="blog-thailand-1.jpg" alt="Minda sourcing at a market in Thailand">
+        <img src="blog-thailand-2.jpg" alt="Artisan market in Thailand">
+        <img src="blog-thailand-3.jpg" alt="Traditional textiles in Thailand">
+        <img src="blog-thailand-4.jpg" alt="Handcrafted goods at artisan market">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINDA CARES -->
+<section id="minda-cares" class="minda-cares">
+  <div class="container">
+    <p class="section-label">Giving Back</p>
+    <h2 class="section-title">Minda Cares</h2>
+    <p>Minda's Boutique is proud to support the Charlottesville community. Through the Minda Cares program, a portion of proceeds goes to local causes and charitable organizations. Shopping here means supporting both independent artisans abroad and your neighbors at home.</p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="container">
+    <div class="visit-grid">
+      <div class="visit-info">
+        <h2>Visit the Boutique</h2>
+        <div class="visit-detail">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+          <div class="visit-detail-content">
+            <h4>Location</h4>
+            <p>Ivy Road, Charlottesville, VA</p>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          <div class="visit-detail-content">
+            <h4>Hours</h4>
+            <p>Monday - Friday: 10:00am - 5:30pm<br>Saturday: 10:00am - 5:00pm<br>Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"/></svg>
+          <div class="visit-detail-content">
+            <h4>Phone</h4>
+            <p><a href="tel:4349774576">(434) 977-4576</a></p>
+          </div>
+        </div>
+        <div class="visit-detail">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          <div class="visit-detail-content">
+            <h4>Email</h4>
+            <p><a href="mailto:arttowear@mindasboutique.com">arttowear@mindasboutique.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="visit-cta">
+        <h3>Your Next Favorite Piece is Waiting</h3>
+        <p>No appointment needed. Walk in, browse, and let Minda help you find something you'll love. Free styling consultations, always.</p>
+        <a href="tel:4349774576" class="btn btn-primary">Call the Boutique</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Minda's Boutique</div>
+  <p>Natural Fibers. Art to Wear. Handcrafted Jewelry. Unique Accessories.</p>
+  <div class="footer-divider"></div>
+  <p>Ivy Road, Charlottesville, VA &nbsp;|&nbsp; (434) 977-4576 &nbsp;|&nbsp; arttowear@mindasboutique.com</p>
+  <p class="footer-copy">&copy; 2026 Minda's Boutique. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
