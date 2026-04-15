@@ -1,0 +1,1021 @@
+<!--
+  BRAND AUDIT — Virginia Discovery Museum (vadm.org)
+  Aesthetic intent: "Playful community learning hub"
+  Typography: Fredoka (display) + DM Sans (body)
+  Continuous gradient flow with decorative bubbles throughout.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virginia Discovery Museum — Charlottesville's Children's Museum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --teal: #2da7c0;
+  --teal-dark: #1e8fa5;
+  --teal-light: #e8f8fb;
+  --purple: #7f2986;
+  --purple-dark: #6c2372;
+  --purple-light: #f5eaf6;
+  --orange: #f5913e;
+  --orange-light: #fef3e8;
+  --green: #7bc143;
+  --green-light: #eef8e5;
+  --magenta: #d4377e;
+  --magenta-light: #fce8f0;
+  --yellow: #ffd23f;
+  --bg: #ffffff;
+  --text: #2d2d3d;
+  --text-light: #5e6d7a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Fredoka', sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+p { font-size: clamp(1rem, 1.5vw, 1.125rem); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ─── BUBBLES ─── */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.has-bubbles {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 0 24px;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img { height: 48px; width: auto; }
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 0.938rem;
+  font-weight: 500;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--teal); }
+
+.nav-cta {
+  background: var(--orange);
+  color: #fff !important;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-weight: 700 !important;
+  transition: background 0.2s !important;
+}
+
+.nav-cta:hover { background: #e07d2a !important; }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(45, 167, 192, 0.88) 0%,
+    rgba(127, 41, 134, 0.82) 50%,
+    rgba(212, 55, 126, 0.78) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  min-height: 600px;
+}
+
+.hero-text { flex: 1; }
+
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 24px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  margin-bottom: 20px;
+}
+
+.hero h1 span { color: var(--yellow); }
+
+.hero p {
+  color: rgba(255,255,255,0.95);
+  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  max-width: 440px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero .btn-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-photo-stack {
+  flex: 0 0 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 240px 200px;
+  gap: 12px;
+}
+
+.hero-photo-stack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  border: 3px solid rgba(255,255,255,0.3);
+}
+
+.hero-photo-stack .photo-wide { grid-column: 1 / -1; }
+
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 32px;
+  border-radius: 28px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-white { background: #fff; color: var(--teal-dark); }
+.btn-white:hover { background: #f0f0f0; }
+
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.6);
+}
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: #fff;
+}
+
+.btn-orange { background: var(--orange); color: #fff; }
+.btn-orange:hover { background: #e07d2a; }
+
+.btn-teal { background: var(--teal); color: #fff; }
+.btn-teal:hover { background: var(--teal-dark); }
+
+.btn-purple { background: var(--purple); color: #fff; }
+.btn-purple:hover { background: var(--purple-dark); }
+
+.btn-sm { font-size: 0.938rem; padding: 10px 24px; }
+
+/* ─── STATS BAR — blends hero bottom (magenta) into exhibits top (teal-light) ─── */
+.stats {
+  background: linear-gradient(180deg, var(--purple) 0%, var(--teal-dark) 100%);
+  padding: 0 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 44px 16px;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 48px;
+  width: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+.stat-number {
+  font-family: 'Fredoka', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--yellow);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.88);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* ─── SECTION DEFAULTS ─── */
+.section { padding: 88px 24px; }
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-header h2 { margin-bottom: 12px; }
+.section-header p { color: var(--text-light); }
+
+.section-label {
+  display: inline-block;
+  font-size: 0.813rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 24px;
+  margin-bottom: 12px;
+}
+
+.label-teal { background: var(--teal-light); color: var(--teal-dark); }
+.label-purple { background: var(--purple-light); color: var(--purple); }
+.label-orange { background: var(--orange-light); color: var(--orange); }
+.label-green { background: var(--green-light); color: var(--green); }
+
+/* ─── EXHIBITS — starts teal-light (from stats), ends purple-light ─── */
+.exhibits-section {
+  background: linear-gradient(180deg, var(--teal-light) 0%, #fff 40%, var(--purple-light) 100%);
+}
+
+.exhibits-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.exhibit-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+  border-top: 4px solid var(--teal);
+}
+
+.exhibit-card:nth-child(2) { border-top-color: var(--purple); }
+.exhibit-card:nth-child(3) { border-top-color: var(--orange); }
+.exhibit-card:nth-child(4) { border-top-color: var(--green); }
+.exhibit-card:nth-child(5) { border-top-color: var(--magenta); }
+.exhibit-card:nth-child(6) { border-top-color: var(--yellow); }
+
+.exhibit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.14);
+}
+
+.exhibit-card img { width: 100%; height: 220px; object-fit: cover; }
+.exhibit-card-body { padding: 20px 20px 24px; }
+.exhibit-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
+.exhibit-card p { font-size: 0.925rem; color: var(--text-light); line-height: 1.5; }
+
+.exhibit-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 24px;
+  margin-bottom: 8px;
+}
+
+.tag-teal { background: var(--teal-light); color: var(--teal-dark); }
+.tag-purple { background: var(--purple-light); color: var(--purple); }
+.tag-orange { background: var(--orange-light); color: var(--orange); }
+
+/* ─── PROGRAMS — starts purple-light (from exhibits), ends orange-light ─── */
+.programs-section {
+  background: linear-gradient(180deg, var(--purple-light) 0%, var(--orange-light) 100%);
+}
+
+.programs-row {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
+}
+
+.programs-row:last-child { margin-bottom: 0; }
+.programs-row.reverse .programs-img { order: 2; }
+.programs-row.reverse .programs-text { order: 1; }
+
+.programs-img { position: relative; }
+
+.programs-img img {
+  border-radius: 16px;
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.programs-text h3 { font-size: clamp(1.5rem, 2.5vw, 1.85rem); margin-bottom: 16px; }
+.programs-text p { color: var(--text-light); margin-bottom: 16px; }
+
+.program-list { list-style: none; margin-bottom: 24px; }
+
+.program-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 0.975rem;
+  color: var(--text);
+}
+
+.program-list li svg { flex-shrink: 0; margin-top: 4px; }
+
+/* ─── ABOUT — starts orange-light (from programs), ends green-light ─── */
+.about-section {
+  background: linear-gradient(180deg, var(--orange-light) 0%, var(--green-light) 100%);
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-img { position: relative; }
+
+.about-img img {
+  border-radius: 16px;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--magenta) 100%);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 28px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-text h2 { margin-bottom: 20px; }
+.about-text p { color: var(--text-light); margin-bottom: 16px; }
+
+.community-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.community-stat {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(4px);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid var(--teal);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.community-stat:nth-child(2) { border-left-color: var(--purple); }
+.community-stat:nth-child(3) { border-left-color: var(--orange); }
+.community-stat:nth-child(4) { border-left-color: var(--green); }
+
+.community-stat .stat-num {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.65rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.community-stat .stat-desc { font-size: 0.85rem; color: var(--text-light); margin-top: 2px; }
+
+/* ─── VISIT — starts green-light (from about), ends teal-light ─── */
+.visit-section {
+  background: linear-gradient(180deg, var(--green-light) 0%, var(--teal-light) 100%);
+}
+
+.visit-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.visit-card {
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(4px);
+  padding: 36px 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.visit-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon-teal { background: var(--teal-light); color: var(--teal); }
+.icon-purple { background: var(--purple-light); color: var(--purple); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+
+.visit-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
+.visit-card p { font-size: 0.938rem; color: var(--text-light); line-height: 1.7; }
+
+/* ─── SUPPORT — starts teal (from visit), orange→magenta→purple gradient ─── */
+.support {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--orange) 25%, var(--magenta) 60%, var(--purple) 100%);
+  padding: 88px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.support h2 {
+  color: #fff;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.support p {
+  color: rgba(255,255,255,0.95);
+  max-width: 520px;
+  margin: 0 auto 32px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.btn-white-bold { background: #fff; color: var(--magenta); font-weight: 700; }
+.btn-white-bold:hover { background: #f5f5f5; }
+
+/* ─── FOOTER ─── */
+.footer {
+  background: #1e1e2e;
+  color: rgba(255,255,255,0.8);
+  padding: 64px 24px 32px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+.footer-brand p { font-size: 0.938rem; line-height: 1.7; margin-top: 16px; max-width: 300px; }
+
+.footer-brand .footer-logo {
+  height: 40px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.footer h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.813rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+.footer ul { list-style: none; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.938rem; transition: color 0.2s; }
+.footer ul a:hover { color: #fff; }
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.938rem;
+}
+
+.footer-contact-item svg { flex-shrink: 0; margin-top: 3px; opacity: 0.7; }
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.813rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { color: rgba(255,255,255,0.5); transition: color 0.2s; }
+.footer-social a:hover { color: var(--yellow); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  .hero { min-height: auto; }
+  .hero-content { flex-direction: column; padding: 48px 24px; gap: 32px; min-height: auto; }
+  .hero-text { text-align: center; align-items: center; }
+  .hero-text p { text-align: center; }
+  .hero .btn-group { justify-content: center; }
+  .hero-photo-stack { flex: auto; width: 100%; grid-template-rows: 200px 160px; }
+  .hero h1 { font-size: 2.25rem; }
+  .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2)::after { display: none; }
+  .stat-item { padding: 28px 12px; }
+  .exhibits-grid { grid-template-columns: 1fr; gap: 20px; }
+  .exhibit-card img { height: 200px; }
+  .programs-row { grid-template-columns: 1fr; gap: 24px; }
+  .programs-row.reverse .programs-img { order: 0; }
+  .programs-row.reverse .programs-text { order: 0; }
+  .programs-img img { height: 260px; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-img img { height: 280px; }
+  .visit-grid { grid-template-columns: 1fr; gap: 20px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  .section { padding: 64px 24px; }
+  .community-stats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .hero .btn-group { flex-direction: column; align-items: center; }
+  .hero .btn-group .btn { width: 100%; text-align: center; }
+  .hero-photo-stack { grid-template-rows: 180px 140px; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="logo.png" alt="Virginia Discovery Museum">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#exhibits">Exhibits</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#support" class="nav-cta">Donate</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero has-bubbles">
+  <img class="hero-img" src="membership-family-1.jpg" alt="Children playing at the Virginia Discovery Museum">
+  <div class="hero-overlay"></div>
+  <!-- hero bubbles -->
+  <div class="bubble" style="width:180px;height:180px;background:rgba(255,210,63,0.12);top:-40px;right:10%;"></div>
+  <div class="bubble" style="width:100px;height:100px;background:rgba(255,255,255,0.08);bottom:20%;left:5%;"></div>
+  <div class="bubble" style="width:60px;height:60px;background:rgba(123,193,67,0.15);top:30%;right:3%;"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-tagline">Explore &bull; Imagine &bull; Discover</div>
+      <h1>Virginia <span>Discovery Museum</span></h1>
+      <p>Hands-on play and learning for ages 0 to 8, on the east end of the Downtown Mall since 1981.</p>
+      <div class="btn-group">
+        <a href="#visit" class="btn btn-white">Plan Your Visit</a>
+        <a href="#exhibits" class="btn btn-outline-white">See the Exhibits</a>
+      </div>
+    </div>
+    <div class="hero-photo-stack">
+      <img class="photo-wide" src="event-kidvention-2.jpg" alt="Children laughing during a science experiment">
+      <img src="event-kidvention-1.jpg" alt="A girl wearing safety goggles at Kid*Vention">
+      <img src="membership-family-3.jpg" alt="A smiling girl at the museum">
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ─── -->
+<section class="stats has-bubbles">
+  <div class="bubble" style="width:120px;height:120px;background:rgba(255,210,63,0.1);top:-30px;left:15%;"></div>
+  <div class="bubble" style="width:80px;height:80px;background:rgba(255,255,255,0.07);bottom:-20px;right:20%;"></div>
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">40+</div>
+      <div class="stat-label">Years on the Mall</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">64,000</div>
+      <div class="stat-label">Visitors Each Year</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">18</div>
+      <div class="stat-label">Hands-On Exhibits</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">28%</div>
+      <div class="stat-label">Admitted Free</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXHIBITS ─── -->
+<section class="section exhibits-section has-bubbles" id="exhibits">
+  <div class="bubble" style="width:200px;height:200px;background:rgba(45,167,192,0.06);top:10%;right:-60px;"></div>
+  <div class="bubble" style="width:140px;height:140px;background:rgba(127,41,134,0.05);bottom:15%;left:-40px;"></div>
+  <div class="bubble" style="width:80px;height:80px;background:rgba(245,145,62,0.08);top:40%;left:8%;"></div>
+  <div class="section-header">
+    <span class="section-label label-teal">Exhibits</span>
+    <h2>6,000 Square Feet of Learning by Doing</h2>
+    <p>Two galleries of hands-on exhibits covering science, art, literacy, music, history, and imaginative play.</p>
+  </div>
+  <div class="exhibits-grid">
+    <div class="exhibit-card">
+      <img src="membership-family-2.jpg" alt="Children explore the Amazing Airways tube exhibit">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-teal">STEM Lab</span>
+        <h3>Amazing Airways</h3>
+        <p>Tubes, fans, and scarves teach air pressure and physics through play.</p>
+      </div>
+    </div>
+    <div class="exhibit-card">
+      <img src="program-exhibits.jpg" alt="Mother and child building in the Construction Zone">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-purple">Front Gallery</span>
+        <h3>Construction Zone</h3>
+        <p>Hard hats, building blocks, and big plans. Kids design and build structures their way.</p>
+      </div>
+    </div>
+    <div class="exhibit-card">
+      <img src="program-sponsored-admission.jpg" alt="Girl experiments with a science exhibit">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-teal">STEM Lab</span>
+        <h3>Flight Lab</h3>
+        <p>Paper planes, wind tunnels, and the science of what makes things fly.</p>
+      </div>
+    </div>
+    <div class="exhibit-card">
+      <img src="program-programs.jpg" alt="Children doing art projects at a table">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-orange">Back Gallery</span>
+        <h3>Creation Station</h3>
+        <p>Open-ended art projects that change weekly. Paint, collage, build, create.</p>
+      </div>
+    </div>
+    <div class="exhibit-card">
+      <img src="summer-camp-1.jpg" alt="Kids playing with balloons during a program">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-purple">Back Gallery</span>
+        <h3>Sound &amp; Music Studio</h3>
+        <p>Drums, xylophones, and instruments from around the world. Make noise, find rhythm.</p>
+      </div>
+    </div>
+    <div class="exhibit-card">
+      <img src="membership-family-3.jpg" alt="A smiling girl at the museum">
+      <div class="exhibit-card-body">
+        <span class="exhibit-tag tag-orange">Little Cville</span>
+        <h3>Discovery Farm</h3>
+        <p>A miniature farm where kids plant, harvest, and learn where food comes from.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROGRAMS ─── -->
+<section class="section programs-section has-bubbles" id="programs">
+  <div class="bubble" style="width:160px;height:160px;background:rgba(212,55,126,0.06);top:5%;right:5%;"></div>
+  <div class="bubble" style="width:100px;height:100px;background:rgba(45,167,192,0.07);bottom:10%;left:3%;"></div>
+  <div class="bubble" style="width:220px;height:220px;background:rgba(255,210,63,0.06);bottom:-60px;right:-80px;"></div>
+  <div class="section-header">
+    <span class="section-label label-purple">Programs</span>
+    <h2>Something for Every Age</h2>
+    <p>Drop-in activities, camps, and special programs for children from birth through age 8.</p>
+  </div>
+
+  <div class="programs-row">
+    <div class="programs-img">
+      <img src="program-outreach.jpg" alt="Museum educator with a group of children during an outdoor activity">
+    </div>
+    <div class="programs-text">
+      <h3>Drop-In Programs</h3>
+      <p>No registration needed. Show up, play, learn. Weekly programs run throughout the school year and rotate by age group.</p>
+      <ul class="program-list">
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#2da7c0" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Storytime, all ages</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#2da7c0" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Baby Buds, ages 0 to 24 months</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#2da7c0" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Toddler Yoga &amp; Movement, ages 2 to 5</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#2da7c0" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Living Lab, ages 4+</li>
+      </ul>
+      <a href="#" class="btn btn-teal btn-sm">See the Calendar</a>
+    </div>
+  </div>
+
+  <div class="programs-row reverse">
+    <div class="programs-img">
+      <img src="summer-camp-3.jpg" alt="Kids at summer camp building and experimenting">
+    </div>
+    <div class="programs-text">
+      <h3>Camps</h3>
+      <p>Day-off camps, spring break, and a full schedule of summer camps for ages 4 to 8. Small groups, real experiments, and enough mess to prove they learned something.</p>
+      <ul class="program-list">
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#f5913e" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Summer Camps, weekly themes</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#f5913e" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Spring Break Camp</li>
+        <li><svg viewBox="0 0 24 24" width="16" height="16"><path fill="#f5913e" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Day-Off Camps on school holidays</li>
+      </ul>
+      <a href="#" class="btn btn-orange btn-sm">Learn About Camps</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="section about-section has-bubbles" id="about">
+  <div class="bubble" style="width:180px;height:180px;background:rgba(123,193,67,0.08);top:-40px;left:10%;"></div>
+  <div class="bubble" style="width:120px;height:120px;background:rgba(127,41,134,0.06);bottom:10%;right:5%;"></div>
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="building-exterior.jpg" alt="Virginia Discovery Museum building on the Downtown Mall">
+      <div class="about-badge">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        524 E Main St, Downtown Mall
+      </div>
+    </div>
+    <div class="about-text">
+      <span class="section-label label-green">About the Museum</span>
+      <h2>A Community Museum, Built for Everyone</h2>
+      <p>The Virginia Discovery Museum has been part of Charlottesville since 1981. We moved to our permanent home on the Downtown Mall in 1990 and have been welcoming families here ever since.</p>
+      <p>Our mission is simple: foster intellectual curiosity and development for all children in our community. That word "all" is the one we take most seriously. Nearly a third of our visitors are admitted free through our Sponsored Admission program, supported by 63 social service agency partners.</p>
+      <div class="community-stats">
+        <div class="community-stat">
+          <div class="stat-num">10,300+</div>
+          <div class="stat-desc">Free admissions per year</div>
+        </div>
+        <div class="community-stat">
+          <div class="stat-num">63</div>
+          <div class="stat-desc">Agency partners referring families</div>
+        </div>
+        <div class="community-stat">
+          <div class="stat-num">350+</div>
+          <div class="stat-desc">Reciprocal science centers</div>
+        </div>
+        <div class="community-stat">
+          <div class="stat-num">200+</div>
+          <div class="stat-desc">Reciprocal children's museums</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLAN YOUR VISIT ─── -->
+<section class="section visit-section has-bubbles" id="visit">
+  <div class="bubble" style="width:140px;height:140px;background:rgba(245,145,62,0.07);top:10%;right:8%;"></div>
+  <div class="bubble" style="width:100px;height:100px;background:rgba(45,167,192,0.08);bottom:5%;left:12%;"></div>
+  <div class="section-header">
+    <span class="section-label label-orange">Plan Your Visit</span>
+    <h2>Come See Us</h2>
+  </div>
+  <div class="visit-grid">
+    <div class="visit-card">
+      <div class="visit-card-icon icon-teal">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+      </div>
+      <h3>Hours</h3>
+      <p>Monday through Saturday<br>9:30 a.m. to 5:00 p.m.<br><br>Sundays available for<br>private rentals.</p>
+    </div>
+    <div class="visit-card">
+      <div class="visit-card-icon icon-purple">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+      </div>
+      <h3>Location</h3>
+      <p>524 E Main Street<br>Charlottesville, VA 22902<br><br>East end of the Downtown Mall.<br>Free first hour at Market St Garage.</p>
+    </div>
+    <div class="visit-card">
+      <div class="visit-card-icon icon-orange">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 2.75c1.24 0 2.25 1.01 2.25 2.25S13.24 11.25 12 11.25 9.75 10.24 9.75 9 10.76 6.75 12 6.75zM17 17H7v-1.5c0-1.67 3.33-2.5 5-2.5s5 .83 5 2.5V17z"/></svg>
+      </div>
+      <h3>Admission</h3>
+      <p>$12 per person<br>Under 12 months free<br>Members: always free<br><br>AAA, AARP, and military discounts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SUPPORT CTA ─── -->
+<section class="support has-bubbles" id="support">
+  <div class="bubble" style="width:280px;height:280px;background:rgba(255,255,255,0.08);top:-80px;right:-80px;"></div>
+  <div class="bubble" style="width:220px;height:220px;background:rgba(255,255,255,0.06);bottom:-60px;left:-60px;"></div>
+  <div class="bubble" style="width:160px;height:160px;background:rgba(255,210,63,0.1);top:50%;left:20%;transform:translateY(-50%);"></div>
+  <div class="bubble" style="width:100px;height:100px;background:rgba(255,255,255,0.05);top:15%;left:60%;"></div>
+  <h2>Foster Lifelong Learning</h2>
+  <p>Your support keeps the museum doors open for every family in Charlottesville, regardless of income. 28% of our visitors are admitted free.</p>
+  <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1;">
+    <a href="#" class="btn btn-white-bold">Make a Donation</a>
+    <a href="#" class="btn btn-outline-white">Become a Member</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="logo.png" alt="Virginia Discovery Museum" class="footer-logo">
+      <p>A hands-on children's museum for families with infants to kids age 8. Fostering intellectual curiosity on the Downtown Mall since 1981.</p>
+    </div>
+    <div>
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#">General Admission</a></li>
+        <li><a href="#">Memberships</a></li>
+        <li><a href="#">Group Visits</a></li>
+        <li><a href="#">Calendar</a></li>
+        <li><a href="#">Policies &amp; FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="#">Drop-In Programs</a></li>
+        <li><a href="#">Summer Camps</a></li>
+        <li><a href="#">Birthday Parties</a></li>
+        <li><a href="#">Kid*Vention</a></li>
+        <li><a href="#">Event Rentals</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"/></svg>
+        (434) 977-1025
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        director@vadm.org
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        524 E Main St<br>Charlottesville, VA 22902
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Virginia Discovery Museum. All rights reserved.</span>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.99 3.66 9.12 8.44 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 16.99 22 12z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 01-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 017.8 2zm-.2 2A3.6 3.6 0 004 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 003.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
