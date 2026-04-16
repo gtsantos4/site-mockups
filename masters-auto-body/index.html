@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Masters Auto Body | Charlottesville, VA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!--
+  BRAND AUDIT — Masters Auto Body
+  Aesthetic intent: "Established Local Craftsman"
+
+  The gold emblem logo, 30-year history, lifetime warranty, DuPont/3M/Standox
+  partnerships — all establishment signals. Deep crimson red (#BA0B06) is their
+  intentional brand color. Copy is direct and assertive. But the early-2000s
+  table layout with silver background makes a 30-year institution look abandoned.
+
+  Design decisions:
+  - Typography: Bold Craftsman (Oswald + Open Sans)
+  - Primary: #BA0B06 (their crimson red)
+  - Accent: #C8981E (gold, from their logo emblem)
+  - Layout: full-bleed hero, stats bar, card grid services, alternating about
+  - Key message: "You have the right to choose" gets prominent placement
+-->
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --primary: #BA0B06;
+  --primary-dark: #8a0804;
+  --accent: #C8981E;
+  --accent-light: #e0b84a;
+  --bg: #FFFFFF;
+  --text: #1a1a2e;
+  --text-light: #5a5a6e;
+  --dark: #141418;
+  --light-bg: #F4F4F6;
+  --border: rgba(26, 26, 46, 0.1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--dark);
+  border-bottom: 3px solid var(--primary);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-brand-mark {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.nav-brand-text {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.nav-brand-text span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-cta:hover { background: var(--primary-dark); }
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-hamburger svg { display: block; }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(20, 20, 24, 0.92) 0%,
+    rgba(20, 20, 24, 0.75) 50%,
+    rgba(20, 20, 24, 0.4) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 16px;
+  border-radius: 3px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  max-width: 640px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.hero h1 span { color: var(--primary); }
+
+.hero-sub {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: rgba(255,255,255,0.85);
+  max-width: 520px;
+  margin-bottom: 36px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.4);
+}
+
+.btn-outline:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* ── STATS ── */
+.stats {
+  background: var(--dark);
+  border-top: 3px solid var(--primary);
+  padding: 48px 24px;
+}
+
+.stats-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── SERVICES ── */
+.services {
+  padding: 96px 24px;
+  background: var(--bg);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.service-card {
+  background: var(--light-bg);
+  border-radius: 8px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-bottom: 3px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-bottom-color: var(--primary);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ── ABOUT ── */
+.about {
+  padding: 96px 24px;
+  background: var(--light-bg);
+}
+
+.about-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.about-image-accent {
+  position: absolute;
+  bottom: -12px;
+  left: -12px;
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--accent);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.about-content .section-label { text-align: left; }
+
+.about-content h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  color: var(--text-light);
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.about-content p:last-of-type { margin-bottom: 28px; }
+
+.about-highlight {
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  padding: 20px 24px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 8px;
+}
+
+.about-highlight p {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+/* ── CHOOSE CALLOUT ── */
+.choose {
+  padding: 80px 24px;
+  background: var(--primary);
+  text-align: center;
+}
+
+.choose h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.choose p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.btn-white:hover {
+  background: var(--light-bg);
+}
+
+/* ── PARTNERS ── */
+.partners {
+  padding: 64px 24px;
+  background: var(--bg);
+}
+
+.partners-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.partners-label {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin-bottom: 32px;
+}
+
+.partners-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 64px;
+  flex-wrap: wrap;
+}
+
+.partners-logos img {
+  height: 48px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+
+.partners-logos img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 96px 24px;
+  background: var(--light-bg);
+}
+
+.contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.contact-info h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.contact-item-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-item-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+}
+
+.contact-item h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.contact-item p {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.contact-item a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.contact-item a:hover { color: var(--primary-dark); }
+
+.contact-form {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+.contact-form h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--light-bg);
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.form-group textarea { resize: vertical; min-height: 100px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.btn-submit {
+  width: 100%;
+  justify-content: center;
+  font-size: 1.05rem;
+  padding: 16px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--dark);
+  padding: 48px 24px;
+  text-align: center;
+  border-top: 3px solid var(--primary);
+}
+
+.footer-brand {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.footer-brand span { color: var(--accent); }
+
+.footer-address {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+
+.footer-phone {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 24px;
+}
+
+.footer-phone a {
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--primary);
+  margin: 0 auto 24px;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-hamburger { display: block; }
+
+  .hero { min-height: 500px; }
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 24, 0.88) 0%,
+      rgba(20, 20, 24, 0.7) 100%
+    );
+  }
+  .hero-content { padding: 60px 24px; }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-image img { height: 280px; }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-logos { gap: 32px; }
+  .partners-logos img { height: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-mark">M</div>
+      <div class="nav-brand-text">Masters <span>Auto Body</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#your-right">Your Right to Choose</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Request Estimate</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+        <path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="hero-collision-repair.jpg" alt="Mechanic working on engine repair">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Charlottesville's Trusted Shop Since 1982</div>
+    <h1>Collision Repair Done <span>Right</span></h1>
+    <p class="hero-sub">Owner-operated on Monticello Road for over 30 years. Lifetime warranty on every paint job and every repair. We handle everything from the tow to the final detail.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Request an Estimate</a>
+      <a href="tel:4349711006" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"/></svg>
+        (434) 971-1006
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-grid">
+    <div>
+      <div class="stat-number">30+</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div>
+      <div class="stat-number">14</div>
+      <div class="stat-label">Employees, Most 12+ Years</div>
+    </div>
+    <div>
+      <div class="stat-number">3</div>
+      <div class="stat-label">Locations</div>
+    </div>
+    <div>
+      <div class="stat-number">Lifetime</div>
+      <div class="stat-label">Warranty on Paint &amp; Work</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <div class="section-label">What We Do</div>
+    <h2>Full-Service Collision &amp; Auto Care</h2>
+    <p>From a fender bender to a full frame repair, we handle the job start to finish. OEM parts, DuPont paint, millimeter-level frame precision.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>
+      </div>
+      <h3>Collision Repair</h3>
+      <p>Unibody work, frame straightening to millimeter precision, and pre- and post-repair alignment documentation so you see the difference.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4H9v11c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h8V4h-3z"/></svg>
+      </div>
+      <h3>Auto Refinishing</h3>
+      <p>DuPont products and upgraded equipment for modern multi-layer finishes. Color matching that disappears the repair. Lifetime warranty.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+      </div>
+      <h3>Paintless Dent Repair</h3>
+      <p>For dents that didn't crack the paint. Preserves the factory finish and saves you the cost and downtime of a full repaint.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <h3>24-Hour Towing</h3>
+      <p>Accidents don't wait for business hours. Call us and we'll get your vehicle to the shop. After-hours towing through Charlottesville Wrecker Service.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17.66 8L12 2.35 6.34 8A8.02 8.02 0 004 13.64c0 2 .78 4.11 2.34 5.67a7.99 7.99 0 0011.32 0c1.56-1.56 2.34-3.67 2.34-5.67S19.22 9.56 17.66 8zM6 14c.01-2 .62-3.27 1.76-4.4L12 5.27l4.24 4.38C17.38 10.77 17.99 12 18 14H6z"/></svg>
+      </div>
+      <h3>Detailing &amp; Waxing</h3>
+      <p>Full interior and exterior detail. Hand wash, clay bar, polish, and wax. Bring it in looking like an accident and pick it up looking like the showroom.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14zM6 13h5v4H6v-4zm6-6h4v3h-4V7zM6 7h5v5H6V7zm6 4h4v6h-4v-6z"/></svg>
+      </div>
+      <h3>Mechanical &amp; A/C</h3>
+      <p>Light mechanical work, air conditioning repair, tires and brakes. One shop handles everything so you're not running between three places.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-image">
+      <img src="body-work.jpg" alt="Technician inspecting engine under the hood">
+      <div class="about-image-accent"></div>
+    </div>
+    <div class="about-content">
+      <div class="section-label">About Masters</div>
+      <h2>Built From a One-Car Garage on Main Street</h2>
+      <p>Jeff Cotten started Masters Auto Body in 1982 in a small garage off Main Street in Charlottesville. Born and raised here. The current shop on Monticello Road opened in 1986, and two more locations followed: Little River, SC and Goochland, VA.</p>
+      <p>Most of the 14-person crew has been here over 12 years. The lead technicians have 25+ years in the trade. When someone stays that long, it says something about the shop.</p>
+      <div class="about-highlight">
+        <p>Lifetime warranty on all paint and workmanship, for as long as you own the vehicle. We use OEM parts and DuPont refinishing products.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR RIGHT TO CHOOSE -->
+<section class="choose" id="your-right">
+  <div class="container">
+    <h2>You Have the Right to Choose Your Own Shop</h2>
+    <p>Your insurance company may suggest a shop. They cannot require it. Virginia law gives you the right to choose where your car gets repaired. Choose the shop that's been on Monticello Road since 1982.</p>
+    <a href="#contact" class="btn btn-white">Get Your Free Estimate</a>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="partners-inner">
+    <div class="partners-label">Trusted Products &amp; Partners</div>
+    <div class="partners-logos">
+      <img src="partner-dupont.gif" alt="DuPont">
+      <img src="partner-3m.jpg" alt="3M">
+      <img src="partner-standox.jpg" alt="Standox">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.02l-2.2 2.19z"/></svg>
+        </div>
+        <div>
+          <h4>Phone</h4>
+          <p><a href="tel:4349711006">(434) 971-1006</a></p>
+          <p style="font-size:0.85rem;color:var(--text-light)">Fax: (434) 971-3808</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+        </div>
+        <div>
+          <h4>Address</h4>
+          <p>1204 Monticello Road<br>Charlottesville, VA 22902</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        </div>
+        <div>
+          <h4>Hours</h4>
+          <p>Monday - Thursday: 8:00am - 5:00pm<br>Friday: 7:30am - 2:00pm<br>Saturday - Sunday: Closed</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <h4>Email</h4>
+          <p><a href="mailto:info@mastersautobody.com">info@mastersautobody.com</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <h3>Request an Estimate</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(434) 555-0100">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="john@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vehicle">Vehicle Year / Make / Model</label>
+          <input type="text" id="vehicle" placeholder="2022 Honda Accord">
+        </div>
+        <div class="form-group">
+          <label for="insurance">Insurance Company</label>
+          <input type="text" id="insurance" placeholder="State Farm, GEICO, etc.">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="details">Describe the Damage</label>
+        <textarea id="details" placeholder="Tell us what happened and we'll get back to you with an estimate."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-submit">Send Estimate Request</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">Masters <span>Auto Body</span></div>
+  <div class="footer-address">1204 Monticello Road, Charlottesville, VA 22902</div>
+  <div class="footer-phone"><a href="tel:4349711006">(434) 971-1006</a> &middot; <a href="mailto:info@mastersautobody.com">info@mastersautobody.com</a></div>
+  <div class="footer-divider"></div>
+  <div class="footer-copy">&copy; 2026 Masters Auto Body, Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
